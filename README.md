@@ -1,2 +1,2 @@
-# RR8_BrBa
+# RR8_BetterCallSaul
 reproducible research assignment #8
