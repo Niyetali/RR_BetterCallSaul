@@ -92,4 +92,17 @@ ggplot(data2, aes(x = Season, y = Average_Views, group = 1)) +
   theme_gray()  
 
 ```
+### Observed changes
+```{r}
+data2 <- data.frame(Season = season, Average_Views = average_views)
+drop1 <- -((data2$Average_Views[data2$Season == 2]/data2$Average_Views[data2$Season == 1])-1)*100
+drop1_adj <- paste(round(drop1, 2), "%")
+
+drop2 <- -((data2$Average_Views[data2$Season == 3]/data2$Average_Views[data2$Season == 2])-1)*100
+drop2_adj <- paste(round(drop2, 2), "%")
+
+last_season <- tail(data2$Average_Views, 2)
+last_adj <- mean(last_season)
+```
+According to the graph, the average viewership had declined with each season. The most dramatic drop in average views occured between seasons 1 and 2, where the figure decreased by `r drop1_adj`. Similarly, the views fell by `r drop2_adj` between seasons 2 and 3. After season 3, the number of average views plunged at a relatively constatnt rate. By the end of the show (last two seasons), the figure for average views remained at the same level (`r last_adj` million).
 
